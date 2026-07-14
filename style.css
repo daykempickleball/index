@@ -138,7 +138,8 @@ main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 10
 .coach-section { background: #090d12; }
 .coach-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 72px; align-items: center; }
 .coach-photo { position: relative; }
-.coach-photo img { width: 100%; min-height: 580px; object-fit: cover; object-position: 55% center; border-radius: 28px; box-shadow: var(--shadow); }
+.coach-photo img { width: 100%; min-height: 580px; object-fit: cover; object-position: 34% center; border-radius: 28px; box-shadow: var(--shadow); }
+.gallery-grid figure:nth-child(2) img { object-position: 34% center; }
 .photo-label { position: absolute; left: -20px; bottom: 38px; padding: 12px 18px; background: var(--lime); color: var(--ink); font-weight: 950; letter-spacing: .12em; font-size: .75rem; transform: rotate(-3deg); }
 .coach-copy h2 { margin: 12px 0 14px; font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: -.05em; text-transform: uppercase; }
 .coach-copy .lead { color: #c2cbd3; font-size: 1.08rem; }
@@ -274,7 +275,7 @@ details p { margin: -5px 0 23px; color: var(--muted); }
   .trust-strip div:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
   .benefit-layout, .coach-grid, .results-grid, .faq-grid, .cta-grid { grid-template-columns: 1fr; gap: 46px; }
   .benefit-visual img { height: 430px; }
-  .coach-photo img { min-height: 480px; }
+  .coach-photo img { min-height: 480px; object-position: 32% center; }
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
   .gallery-grid .gallery-main { grid-row: auto; min-height: 380px; }
   .gallery-grid figure { min-height: 300px; }
@@ -306,7 +307,8 @@ details p { margin: -5px 0 23px; color: var(--muted); }
   .timeline { grid-template-columns: 1fr; }
   .benefit-item { grid-template-columns: 56px 1fr; gap: 13px; }
   .benefit-visual img { height: 330px; }
-  .coach-photo img { min-height: 390px; }
+  .coach-photo img { min-height: 390px; object-position: 30% center; }
+  .gallery-grid figure:nth-child(2) img { object-position: 30% center; }
   .result-cards { grid-template-columns: 1fr; }
   .price-card { padding: 28px 23px; }
   .lead-form { padding: 26px 20px; }

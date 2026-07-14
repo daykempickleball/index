@@ -22,7 +22,7 @@ Số điện thoại trong bản bàn giao đang là **số mẫu không hoạt 
 ## Thông tin đang dùng trên trang
 
 - Thương hiệu: 5P Pickleball 1:1
-- Huấn luyện viên: Coach Hưng
+- Huấn luyện viên: Coach Linh
 - Khu vực: 36 Đường A4, Bảy Hiền, Hồ Chí Minh
 - Gói trải nghiệm: 590.000đ/buổi
 - Gói 8 buổi: 4.800.000đ
