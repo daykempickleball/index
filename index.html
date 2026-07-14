@@ -27,6 +27,121 @@
   <link rel="apple-touch-icon" href="assets/og-logo.png">
   <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
+  <style id="a11y-contrast-fix">
+    /* WCAG contrast overrides: giữ nguyên bố cục, chỉ tăng độ tương phản chữ/nền. */
+    .section-light,
+    .gallery-section,
+    .results-section {
+      color: #17212b;
+    }
+
+    .section-light .section-heading h2,
+    .gallery-section .section-heading h2,
+    .results-section .section-heading h2 {
+      color: #101820;
+    }
+
+    .section-light .section-heading p,
+    .gallery-section figcaption,
+    .results-section .section-heading p {
+      color: #435160;
+    }
+
+    /* Eyebrow trên nền tối. */
+    .section-dark .eyebrow:not(.dark),
+    .coach-section .coach-copy .eyebrow,
+    .pricing-section .eyebrow,
+    .faq-section .eyebrow {
+      color: #d2ff00;
+    }
+
+    /* Eyebrow trên nền sáng. */
+    .section-light .eyebrow.dark,
+    .gallery-section .eyebrow.dark,
+    .results-section .eyebrow.dark,
+    .cta-section .eyebrow.dark {
+      color: #355000;
+    }
+
+    /* Khu bảng giá: card thường nền sáng, chữ tối. */
+    .pricing-section .price-card:not(.featured) {
+      background: #ffffff;
+      color: #17212b;
+      border-color: #cbd5df;
+    }
+
+    .pricing-section .price-card:not(.featured) .plan-name {
+      color: #355000;
+    }
+
+    .pricing-section .price-card:not(.featured) h3,
+    .pricing-section .price-card:not(.featured) .price strong {
+      color: #101820;
+    }
+
+    .pricing-section .price-card:not(.featured) .price span,
+    .pricing-section .price-card:not(.featured) ul li {
+      color: #3f4d5a;
+    }
+
+    .pricing-section .price-card:not(.featured) ul li::before {
+      color: #355000;
+    }
+
+    /* Card nổi bật nền xanh sáng phải dùng chữ rất tối. */
+    .pricing-section .price-card.featured {
+      background: #cfff00;
+      color: #0b1218;
+    }
+
+    .pricing-section .price-card.featured .plan-name,
+    .pricing-section .price-card.featured h3,
+    .pricing-section .price-card.featured .price strong,
+    .pricing-section .price-card.featured .price span,
+    .pricing-section .price-card.featured ul li,
+    .pricing-section .price-card.featured ul li::before {
+      color: #0b1218;
+    }
+
+    .pricing-section .price-card.featured .popular {
+      background: #0b1218;
+      color: #ffffff;
+    }
+
+    /* Khối cam kết trên nền tối. */
+    .pricing-section .guarantee {
+      background: #141f29;
+      border-color: #536270;
+    }
+
+    .pricing-section .guarantee strong {
+      color: #ffffff;
+    }
+
+    .pricing-section .guarantee p {
+      color: #d9e1e8;
+    }
+
+    .pricing-section .guarantee-icon {
+      background: #cfff00;
+      color: #0b1218;
+    }
+
+    /* Kết quả trên nền sáng. */
+    .results-section .result-card {
+      background: #ffffff;
+      color: #17212b;
+      border-color: #cbd5df;
+    }
+
+    .results-section .result-card strong {
+      color: #101820;
+    }
+
+    .results-section .result-card span {
+      color: #3f4d5a;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -477,7 +592,8 @@
 
         isSubmitting = true;
         setLoading(true);
-setStatus("Đang xử lý thông tin đăng ký của bạn...", "");
+        setStatus("Đang xử lý thông tin đăng ký của bạn...", "");
+
         if (submissionId) {
           submissionId.value =
             "5p-" + Date.now() + "-" + Math.random().toString(36).slice(2, 10);
