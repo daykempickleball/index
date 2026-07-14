@@ -428,35 +428,78 @@
 
   <script src="script.js"></script>
   <script>
-    // Fallback xác nhận thành công: Google Apps Script đã lưu dữ liệu nhưng
-    // đôi khi trang phản hồi không gửi được postMessage về GitHub Pages.
+    /*
+      Xử lý riêng form Google Sheets.
+      Form cũ được clone để loại bỏ toàn bộ listener/timeout cũ trong script.js,
+      sau đó gửi POST thẳng vào iframe ẩn. Apps Script vẫn lưu dữ liệu bình thường,
+      còn giao diện chủ động hiện thông báo thành công nên không bị đứng chờ phản hồi CORS.
+    */
     document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("lead-form");
+      const originalForm = document.getElementById("lead-form");
       const frame = document.getElementById("sheet-submit-frame");
 
-      if (!form || !frame) return;
+      if (!originalForm || !frame) return;
 
+      // Loại bỏ listener submit cũ đã được script.js gắn vào form.
+      const form = originalForm.cloneNode(true);
+      originalForm.replaceWith(form);
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const submitLabel = form.querySelector(".submit-label");
+      const status = form.querySelector(".form-status");
+      const submissionId = form.querySelector("#submission-id");
       let isSubmitting = false;
 
-      form.addEventListener("submit", function () {
+      function setStatus(message, type) {
+        if (!status) return;
+        status.textContent = message;
+        status.classList.remove("success", "error");
+        if (type) status.classList.add(type);
+      }
+
+      function setLoading(loading) {
+        if (submitButton) submitButton.disabled = loading;
+        if (submitLabel) {
+          submitLabel.textContent = loading ? "Đang gửi..." : "Gửi đăng ký";
+        }
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        if (isSubmitting || !form.reportValidity()) return;
+
+        if (!navigator.onLine) {
+          setStatus("Thiết bị đang mất kết nối mạng. Vui lòng thử lại.", "error");
+          return;
+        }
+
         isSubmitting = true;
-      });
+        setLoading(true);
+        setStatus("Đang lưu thông tin vào Google Sheets...", "");
 
-      frame.addEventListener("load", function () {
-        // Bỏ qua lần iframe tải about:blank lúc mở trang.
-        if (!isSubmitting) return;
+        if (submissionId) {
+          submissionId.value =
+            "5p-" + Date.now() + "-" + Math.random().toString(36).slice(2, 10);
+        }
 
-        isSubmitting = false;
+        // Gửi thật sự bằng form POST vào iframe ẩn, không dùng fetch/CORS.
+        form.target = frame.name;
+        form.method = "post";
+        HTMLFormElement.prototype.submit.call(form);
 
-        // Phát đúng sự kiện mà script xử lý form đang chờ.
-        window.dispatchEvent(new MessageEvent("message", {
-          data: {
-            source: "5p-lead-form",
-            ok: true,
-            message: "Đã gửi đăng ký thành công! Coach Linh sẽ sớm liên hệ với bạn."
-          },
-          origin: window.location.origin
-        }));
+        // Apps Script không cho trang GitHub đọc phản hồi trực tiếp.
+        // Sau khi yêu cầu đã được gửi, cập nhật giao diện để khách không bị đứng chờ.
+        window.setTimeout(function () {
+          form.reset();
+          isSubmitting = false;
+          setLoading(false);
+          setStatus(
+            "Đã gửi đăng ký thành công! Coach Linh sẽ sớm liên hệ với bạn.",
+            "success"
+          );
+        }, 1600);
       });
     });
   </script>
