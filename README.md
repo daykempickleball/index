@@ -1,4 +1,4 @@
-# APEX Pickleball 1:1 — Landing page GitHub Pages
+# 5P Pickleball 1:1 — Landing page GitHub Pages
 
 ## Cách upload
 
@@ -21,9 +21,9 @@ Số điện thoại trong bản bàn giao đang là **số mẫu không hoạt 
 
 ## Thông tin đang dùng trên trang
 
-- Thương hiệu: APEX Pickleball 1:1
+- Thương hiệu: 5P Pickleball 1:1
 - Huấn luyện viên: Coach Hưng
-- Khu vực: Sala – An Phú – Thảo Điền, TP.HCM
+- Khu vực: 36 Đường A4, Bảy Hiền, Hồ Chí Minh
 - Gói trải nghiệm: 590.000đ/buổi
 - Gói 8 buổi: 4.800.000đ
 - Gói Business VIP 16 buổi: 8.800.000đ

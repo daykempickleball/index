@@ -4,9 +4,9 @@
   - phoneInternational: số dùng cho tel: và Zalo, không có dấu +
 */
 const SITE_CONFIG = {
-  phoneDisplay: "0909 123 456",
-  phoneInternational: "84909123456",
-  zaloUrl: "https://zalo.me/84909123456"
+  phoneDisplay: "0772 334 449",
+  phoneInternational: "84772334449",
+  zaloUrl: "https://zalo.me/0772334449"
 };
 
 const header = document.querySelector('.site-header');
@@ -72,7 +72,7 @@ leadForm?.addEventListener('submit', async (event) => {
   }
 
   const message = [
-    'Xin chào APEX Pickleball, tôi muốn đăng ký học thử 1:1.',
+    'Xin chào 5P Pickleball, tôi muốn đăng ký học thử 1:1.',
     `Họ tên: ${name}`,
     `Số điện thoại: ${phone}`,
     `Trình độ: ${level}`,
