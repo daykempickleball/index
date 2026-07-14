@@ -74,6 +74,7 @@ main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 10
 .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 20%, rgba(215,255,0,.08), transparent 28%), linear-gradient(180deg, transparent, rgba(0,0,0,.26)); pointer-events: none; }
 .hero-glow { position: absolute; width: 420px; height: 420px; border-radius: 50%; background: rgba(215,255,0,.06); filter: blur(70px); right: -70px; top: 90px; }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 52px; }
+.hero-copy, .hero-media { opacity: 1; transform: none; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--lime); font-weight: 900; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
 .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
 .eyebrow.dark { color: #628000; }
