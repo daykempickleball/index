@@ -4,9 +4,9 @@
   - phoneInternational: số dùng cho tel: và Zalo, không có dấu +
 */
 const SITE_CONFIG = {
-  phoneDisplay: "0000 000 000",
-  phoneInternational: "84000000000",
-  zaloUrl: "https://zalo.me/84000000000"
+  phoneDisplay: "0909 123 456",
+  phoneInternational: "84909123456",
+  zaloUrl: "https://zalo.me/84909123456"
 };
 
 const header = document.querySelector('.site-header');

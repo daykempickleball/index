@@ -20,12 +20,25 @@
     "name": "APEX Pickleball 1:1",
     "description": "Dịch vụ huấn luyện Pickleball cá nhân 1:1 tại TP.HCM.",
     "areaServed": "TP.HCM",
-    "telephone": "+84000000000",
+    "telephone": "+84909123456",
     "priceRange": "₫₫₫"
   }
   </script>
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6.6 10.8a15.3 15.3 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.29c1 .34 2.07.52 3.17.52.67 0 1.21.54 1.21 1.21V20c0 .67-.54 1.21-1.21 1.21C10.5 21.21 2.79 13.5 2.79 4.21 2.79 3.54 3.33 3 4 3h3.56c.67 0 1.21.54 1.21 1.21 0 1.1.18 2.17.52 3.17a1.2 1.2 0 0 1-.29 1.22l-2.4 2.2Z"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Zm0-9a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+    </symbol>
+    <symbol id="icon-zalo" viewBox="0 0 64 64">
+      <path fill="currentColor" d="M12 10h40c6.63 0 12 5.37 12 12v20c0 6.63-5.37 12-12 12H12C5.37 54 0 48.63 0 42V22c0-6.63 5.37-12 12-12Z" opacity=".14"/>
+      <path fill="currentColor" d="M18 16h28c6.63 0 12 5.37 12 12v8c0 6.63-5.37 12-12 12H31.5L21 56v-8H18c-6.63 0-12-5.37-12-12v-8c0-6.63 5.37-12 12-12Z"/>
+      <path fill="#fff" d="M18.5 25.4h18.7c.73 0 1.2.48 1.2 1.17 0 .31-.1.62-.3.87L25.4 42.45h11.8c.68 0 1.16.47 1.16 1.15 0 .7-.48 1.17-1.16 1.17H17.95c-.72 0-1.2-.47-1.2-1.16 0-.33.1-.63.33-.9L29.75 27.7H18.5c-.7 0-1.16-.48-1.16-1.15 0-.7.46-1.16 1.16-1.16Zm26.8 0c.68 0 1.15.47 1.15 1.16v17.06c0 .68-.47 1.15-1.15 1.15-.7 0-1.17-.47-1.17-1.15V26.56c0-.7.47-1.16 1.17-1.16Z"/>
+    </symbol>
+  </svg>
   <a class="skip-link" href="#main">Đi đến nội dung chính</a>
 
   <header class="site-header" id="top">
@@ -70,7 +83,7 @@
               Đặt lịch đánh giá đầu vào
             </a>
             <a class="btn btn-ghost btn-lg js-zalo" href="#" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.7 9.7 0 0 1-3.8-.8L3 21l1.5-4.6A8.2 8.2 0 0 1 3 11.5 8.6 8.6 0 0 1 12 3a8.6 8.6 0 0 1 9 8.5Z"/></svg>
+              <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#icon-zalo"/></svg>
               Tư vấn qua Zalo
             </a>
           </div>
@@ -330,8 +343,8 @@
           <h2>Đừng để cách đánh sai trở thành thói quen khó sửa</h2>
           <p>Để lại thông tin. Coach Hậu sẽ liên hệ xác nhận mục tiêu, trình độ hiện tại và khung giờ phù hợp.</p>
           <div class="contact-list">
-            <a class="js-phone" href="#"><span>☎</span><div><small>Hotline / Zalo</small><strong class="js-phone-text">0000 000 000</strong></div></a>
-            <div><span>⌖</span><div><small>Khu vực huấn luyện</small><strong>Sala – An Phú – Thảo Điền, TP.HCM</strong></div></div>
+            <a class="js-phone contact-card" href="#"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></span><div><small>Hotline / Zalo</small><strong class="js-phone-text">0909 123 456</strong></div></a>
+            <div class="contact-card"><span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg></span><div><small>Khu vực huấn luyện</small><strong>Sala – An Phú – Thảo Điền, TP.HCM</strong></div></div>
           </div>
         </div>
 
@@ -351,19 +364,53 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <a class="brand footer-brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 5 58 53H46l-6-11H24l-6 11H6L32 5Zm0 20-5 9h10l-5-9Z"/></svg></span>
-        <span><strong>APEX</strong><small>PICKLEBALL 1:1</small></span>
-      </a>
-      <p>Huấn luyện Pickleball cá nhân cho người bận rộn tại TP.HCM.</p>
-      <div class="footer-links"><a href="#loi-ich">Lợi ích</a><a href="#goi-hoc">Gói học</a><a href="#faq">FAQ</a><a href="#dang-ky">Liên hệ</a></div>
-      <small>© <span id="year"></span> APEX Pickleball. All rights reserved.</small>
+      <div class="footer-brand-block">
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 5 58 53H46l-6-11H24l-6 11H6L32 5Zm0 20-5 9h10l-5-9Z"/></svg></span>
+          <span><strong>APEX</strong><small>PICKLEBALL 1:1</small></span>
+        </a>
+        <p>Huấn luyện Pickleball 1:1 cao cấp dành cho người bận rộn, người đi làm và nhóm khách hàng business tại TP.HCM.</p>
+      </div>
+      <div>
+        <h3>Điều hướng nhanh</h3>
+        <div class="footer-links">
+          <a href="#loi-ich">Lợi ích</a>
+          <a href="#lo-trinh">Lộ trình</a>
+          <a href="#hlv">Huấn luyện viên</a>
+          <a href="#goi-hoc">Gói học</a>
+          <a href="#faq">FAQ</a>
+          <a href="#dang-ky">Liên hệ</a>
+        </div>
+      </div>
+      <div>
+        <h3>Thông tin liên hệ</h3>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg><a class="js-phone" href="#"><span class="js-phone-text">0909 123 456</span></a></li>
+          <li><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#icon-zalo"/></svg><a class="js-zalo" href="#">Chat Zalo ngay</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg><span>Sala – An Phú – Thảo Điền, TP.HCM</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Khung giờ tư vấn</h3>
+        <ul class="footer-schedule">
+          <li>Thứ 2 – Thứ 6: 07:00 – 21:00</li>
+          <li>Thứ 7 – Chủ nhật: 07:00 – 20:00</li>
+          <li>Phản hồi form trong giờ làm việc</li>
+        </ul>
+      </div>
+      <small>© <span id="year"></span> APEX Pickleball. All rights reserved. Thiết kế landing page dành cho GitHub Pages.</small>
     </div>
   </footer>
 
   <div class="floating-actions" aria-label="Liên hệ nhanh">
-    <a class="float-phone js-phone" href="#" aria-label="Gọi điện"><span>☎</span></a>
-    <a class="float-zalo js-zalo" href="#" aria-label="Chat Zalo"><span>Zalo</span></a>
+    <a class="float-phone js-phone" href="#" aria-label="Gọi điện">
+      <span class="float-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-phone"/></svg></span>
+      <span class="float-text">Gọi ngay</span>
+    </a>
+    <a class="float-zalo js-zalo" href="#" aria-label="Chat Zalo">
+      <span class="float-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#icon-zalo"/></svg></span>
+      <span class="float-text">Zalo</span>
+    </a>
   </div>
 
   <script src="script.js"></script>
