@@ -77,7 +77,7 @@ main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 10
 .hero-copy, .hero-media { opacity: 1; transform: none; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--lime); font-weight: 900; font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
 .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
-.eyebrow.dark { color: #628000; }
+.eyebrow.dark { color: #465d00; }
 .hero h1 { max-width: 760px; margin: 24px 0 26px; font-family: "Arial Black", "Segoe UI", Arial, sans-serif; font-size: clamp(2.6rem, 4.2vw, 4.25rem); line-height: 1.02; letter-spacing: -.03em; text-transform: uppercase; font-weight: 900; }
 .hero-title-line { display: block; white-space: normal; color: var(--text); }
 .hero-title-kicker { margin-bottom: .28em; font-size: .58em; line-height: 1.15; letter-spacing: .01em; }
@@ -168,8 +168,8 @@ blockquote { margin: 30px 0; padding: 20px 24px; border-left: 3px solid var(--li
 .price-card h3 { margin: 12px 0 8px; font-size: 1.55rem; }
 .price { display: flex; align-items: baseline; gap: 7px; padding: 18px 0 22px; border-bottom: 1px solid var(--line); }
 .price strong { font-size: 2rem; letter-spacing: -.04em; }
-.price span { color: var(--muted); font-size: .78rem; }
-.price-card ul { list-style: none; padding: 0; margin: 24px 0 30px; display: grid; gap: 12px; color: #cbd3da; font-size: .93rem; flex: 1; }
+.price span { color: #dbe3ea; font-size: .78rem; }
+.price-card ul { list-style: none; padding: 0; margin: 24px 0 30px; display: grid; gap: 12px; color: #e2e8ee; font-size: .93rem; flex: 1; }
 .price-card li::before { content: "✓"; color: var(--lime); margin-right: 10px; font-weight: 900; }
 .guarantee { max-width: 850px; margin: 42px auto 0; display: flex; gap: 17px; align-items: flex-start; padding: 22px 26px; border: 1px solid rgba(215,255,0,.3); border-radius: 16px; background: rgba(215,255,0,.05); }
 .guarantee-icon { flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-weight: 950; }
@@ -179,7 +179,7 @@ blockquote { margin: 30px 0; padding: 20px 24px; border-left: 3px solid var(--li
 .result-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; }
 .result-card { min-height: 180px; padding: 27px; border-radius: 18px; border: 1px solid #dce0e2; background: #fff; display: flex; flex-direction: column; justify-content: space-between; }
 .result-card strong { font-size: 1.5rem; }
-.result-card span { color: #626c75; }
+.result-card span { color: #46515b; }
 .result-card::before { content: "↗"; align-self: flex-end; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #11171d; color: var(--lime); }
 
 .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
@@ -229,7 +229,7 @@ details p { margin: -5px 0 23px; color: var(--muted); }
 .footer-contact li { display:flex; align-items:flex-start; gap:12px; }
 .footer-contact svg { flex:0 0 20px; width:20px; height:20px; color:var(--lime); margin-top:2px; }
 .footer-schedule li { color:#cbd3da; }
-.footer-grid > small { grid-column: 1 / -1; color: #6f7a84; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; margin-top: 10px; }
+.footer-grid > small { grid-column: 1 / -1; color: #8f9ba6; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; margin-top: 10px; }
 
 .floating-actions { position: fixed; z-index: 90; right: 18px; bottom: 18px; display: grid; gap: 12px; }
 .floating-actions a { display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 14px 35px rgba(0,0,0,.32); }
@@ -243,12 +243,8 @@ details p { margin: -5px 0 23px; color: var(--muted); }
 .float-zalo .float-icon svg { width:24px; height:24px; }
 .float-text { white-space:nowrap; }
 
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
-.reveal.in-view { opacity: 1; transform: none; }
-.delay-1 { transition-delay: .08s; }
-.delay-2 { transition-delay: .16s; }
-.delay-3 { transition-delay: .24s; }
-.delay-4 { transition-delay: .32s; }
+.reveal, .reveal.in-view { opacity: 1; transform: none; transition: none; }
+.delay-1, .delay-2, .delay-3, .delay-4 { transition-delay: 0s; }
 
 @media (max-width: 1040px) {
   .nav-cta { display: none; }
