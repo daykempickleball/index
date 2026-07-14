@@ -477,8 +477,7 @@
 
         isSubmitting = true;
         setLoading(true);
-        setStatus("Đang lưu thông tin vào Google Sheets...", "");
-
+setStatus("Đang xử lý thông tin đăng ký của bạn...", "");
         if (submissionId) {
           submissionId.value =
             "5p-" + Date.now() + "-" + Math.random().toString(36).slice(2, 10);
