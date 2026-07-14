@@ -215,6 +215,10 @@ details p { margin: -5px 0 23px; color: var(--muted); }
 .lead-form button { margin-top: 20px; }
 .form-note { margin: 12px 0 0; color: #89949f; font-size: .72rem; text-align: center; }
 .form-status { min-height: 24px; margin-top: 8px; color: var(--lime); text-align: center; font-size: .82rem; }
+.form-status.success { color: var(--lime); }
+.form-status.error { color: #ff8b8b; }
+.lead-form button:disabled { cursor: wait; opacity: .72; transform: none; box-shadow: none; }
+.sheet-submit-frame { position: absolute; width: 1px; height: 1px; border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
 
 .site-footer { padding: 68px 0 34px; border-top: 1px solid var(--line); background: linear-gradient(180deg, #06090d 0%, #080d12 100%); }
 .footer-grid { display: grid; grid-template-columns: 1.25fr .9fr 1fr .95fr; gap: 34px; align-items: start; }

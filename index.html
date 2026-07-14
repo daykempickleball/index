@@ -359,16 +359,17 @@
           </div>
         </div>
 
-        <form class="lead-form reveal delay-1" id="lead-form">
+        <form class="lead-form reveal delay-1" id="lead-form" action="https://script.google.com/macros/s/AKfycbzxNzY07enuP84nytDvYSnXjxhzuc-p5MX51teF5TYkJLii_mZN0wASCi1l6sJm70k/exec" method="post" target="sheet-submit-frame" accept-charset="UTF-8">
           <div class="form-head"><strong>ĐĂNG KÝ HỌC THỬ</strong><span>Phản hồi trong giờ làm việc</span></div>
           <label>Họ và tên<input type="text" name="name" placeholder="Ví dụ: Nguyễn Minh Anh" required autocomplete="name"></label>
           <label>Số điện thoại<input type="tel" name="phone" placeholder="Số điện thoại của bạn" required autocomplete="tel" inputmode="tel"></label>
           <label>Trình độ hiện tại<select name="level" required><option value="">Chọn trình độ</option><option>Mới bắt đầu</option><option>Đã chơi dưới 6 tháng</option><option>Đã chơi trên 6 tháng</option><option>Đang thi đấu phong trào</option></select></label>
           <label>Mục tiêu<textarea name="goal" rows="3" placeholder="Ví dụ: sửa trái tay, tăng phản xạ, chuẩn bị giải đấu..."></textarea></label>
-          <button class="btn btn-primary btn-lg full" type="submit">Gửi thông tin qua Zalo <span>→</span></button>
+          <button class="btn btn-primary btn-lg full" type="submit"><span class="submit-label">Gửi đăng ký</span> <span aria-hidden="true">→</span></button>
           <p class="form-note">Bằng việc gửi form, bạn đồng ý để 5P liên hệ tư vấn về lịch học.</p>
           <div class="form-status" role="status" aria-live="polite"></div>
         </form>
+        <iframe class="sheet-submit-frame" name="sheet-submit-frame" title="Gửi dữ liệu đăng ký" aria-hidden="true"></iframe>
       </div>
     </section>
   </main>
