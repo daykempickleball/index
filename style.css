@@ -356,3 +356,69 @@ details p { margin: -5px 0 23px; color: var(--muted); }
   color: #ffffff;
 }
 
+/* Gallery + Coach final visual fix v2 */
+main .gallery-section .gallery-grid figure figcaption {
+  z-index: 3 !important;
+  display: block !important;
+  opacity: 1 !important;
+  background: rgba(5, 9, 13, 0.94) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+  text-shadow: none !important;
+  mix-blend-mode: normal !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#hlv .coach-grid {
+  grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr) !important;
+  gap: clamp(40px, 5vw, 72px) !important;
+}
+
+#hlv .coach-photo {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+
+#hlv .coach-photo img {
+  display: block !important;
+  width: min(100%, 540px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 720px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #090d12 !important;
+}
+
+#hlv .photo-label {
+  left: 18px !important;
+}
+
+@media (max-width: 900px) {
+  #hlv .coach-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #hlv .coach-photo img {
+    width: min(100%, 520px) !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 580px) {
+  #hlv .coach-photo img {
+    width: 100% !important;
+  }
+
+  main .gallery-section .gallery-grid figure figcaption {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    padding: 11px 13px !important;
+    font-size: 0.84rem !important;
+  }
+}
