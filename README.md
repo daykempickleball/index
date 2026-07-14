@@ -22,7 +22,7 @@ Số điện thoại trong bản bàn giao đang là **số mẫu không hoạt 
 ## Thông tin đang dùng trên trang
 
 - Thương hiệu: APEX Pickleball 1:1
-- Huấn luyện viên: Coach Hậu
+- Huấn luyện viên: Coach Hưng
 - Khu vực: Sala – An Phú – Thảo Điền, TP.HCM
 - Gói trải nghiệm: 590.000đ/buổi
 - Gói 8 buổi: 4.800.000đ
