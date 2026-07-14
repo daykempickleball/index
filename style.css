@@ -32,7 +32,7 @@ button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
 .section { padding: 105px 0; }
-main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 1000px; }
+main > section:not(.hero) { content-visibility: visible; contain-intrinsic-size: auto; }
 .section-dark { background: var(--bg); }
 .section-light { background: var(--light); color: var(--ink); }
 .skip-link { position: fixed; z-index: 1000; top: 12px; left: 12px; padding: 10px 14px; background: var(--lime); color: var(--ink); transform: translateY(-150%); }
@@ -325,3 +325,34 @@ details p { margin: -5px 0 23px; color: var(--muted); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Accessibility contrast hardening — PageSpeed/Lighthouse */
+#hlv.coach-section,
+#hlv .coach-copy {
+  background-color: #090d12;
+}
+
+#hlv .coach-copy .eyebrow {
+  color: #e8ff66;
+  background-color: #090d12;
+}
+
+.gallery-section {
+  background-color: #f3f5f6;
+  color: #0b0f13;
+}
+
+.gallery-section .section-heading .eyebrow.dark {
+  color: #2d4100;
+  background-color: #f3f5f6;
+}
+
+.gallery-section .section-heading h2 {
+  color: #0b0f13;
+}
+
+.gallery-grid figcaption {
+  background: #080c10;
+  color: #ffffff;
+}
+

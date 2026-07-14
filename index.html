@@ -26,7 +26,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/og-logo.png">
   <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260714-contrast-final">
   <style id="a11y-contrast-fix">
     /* WCAG contrast overrides: giữ nguyên bố cục, chỉ tăng độ tương phản chữ/nền. */
     .section-light,
@@ -180,6 +180,41 @@
     .gallery-section .section-heading p,
     .gallery-section figcaption {
       color: #334155;
+    }
+
+    /* Sửa dứt điểm lỗi đo tương phản của Lighthouse/PageSpeed ở nội dung ngoài màn hình. */
+    main > section:not(.hero) {
+      content-visibility: visible !important;
+      contain-intrinsic-size: auto !important;
+    }
+
+    #hlv.coach-section,
+    #hlv .coach-copy {
+      background-color: #090d12 !important;
+    }
+
+    #hlv .coach-copy .eyebrow {
+      color: #e8ff66 !important;
+      background-color: #090d12 !important;
+    }
+
+    .gallery-section {
+      background-color: #f3f5f6 !important;
+      color: #0b0f13 !important;
+    }
+
+    .gallery-section .section-heading .eyebrow.dark {
+      color: #2d4100 !important;
+      background-color: #f3f5f6 !important;
+    }
+
+    .gallery-section .section-heading h2 {
+      color: #0b0f13 !important;
+    }
+
+    .gallery-grid figcaption {
+      background: #080c10 !important;
+      color: #ffffff !important;
     }
   </style>
   <script type="application/ld+json">
