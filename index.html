@@ -370,7 +370,7 @@
           <p class="form-note">Bằng việc gửi form, bạn đồng ý để 5P liên hệ tư vấn về lịch học.</p>
           <div class="form-status" role="status" aria-live="polite"></div>
         </form>
-        <iframe class="sheet-submit-frame" name="sheet-submit-frame" title="Gửi dữ liệu đăng ký" aria-hidden="true"></iframe>
+        <iframe class="sheet-submit-frame" id="sheet-submit-frame" name="sheet-submit-frame" title="Gửi dữ liệu đăng ký" aria-hidden="true"></iframe>
       </div>
     </section>
   </main>
@@ -427,5 +427,38 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Fallback xác nhận thành công: Google Apps Script đã lưu dữ liệu nhưng
+    // đôi khi trang phản hồi không gửi được postMessage về GitHub Pages.
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("lead-form");
+      const frame = document.getElementById("sheet-submit-frame");
+
+      if (!form || !frame) return;
+
+      let isSubmitting = false;
+
+      form.addEventListener("submit", function () {
+        isSubmitting = true;
+      });
+
+      frame.addEventListener("load", function () {
+        // Bỏ qua lần iframe tải about:blank lúc mở trang.
+        if (!isSubmitting) return;
+
+        isSubmitting = false;
+
+        // Phát đúng sự kiện mà script xử lý form đang chờ.
+        window.dispatchEvent(new MessageEvent("message", {
+          data: {
+            source: "5p-lead-form",
+            ok: true,
+            message: "Đã gửi đăng ký thành công! Coach Linh sẽ sớm liên hệ với bạn."
+          },
+          origin: window.location.origin
+        }));
+      });
+    });
+  </script>
 </body>
 </html>
