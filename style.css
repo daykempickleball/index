@@ -422,3 +422,27 @@ main .gallery-section .gallery-grid figure figcaption {
     font-size: 0.84rem !important;
   }
 }
+
+/* Pricing CTA contrast fix v3 — Lighthouse/PageSpeed */
+.pricing-section .price-card:not(.featured) .btn.btn-outline {
+  background: #101820 !important;
+  border-color: #101820 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none;
+}
+
+.pricing-section .price-card:not(.featured) .btn.btn-outline:hover,
+.pricing-section .price-card:not(.featured) .btn.btn-outline:focus-visible {
+  background: #d7ff00 !important;
+  border-color: #d7ff00 !important;
+  color: #0b0f13 !important;
+  -webkit-text-fill-color: #0b0f13 !important;
+}
+
+.pricing-section .price-card:not(.featured) .btn.btn-outline:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+

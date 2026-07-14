@@ -26,7 +26,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/og-logo.png">
   <link rel="preload" href="assets/hero.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="style.css?v=20260714-gallery-coach-v2">
+  <link rel="stylesheet" href="style.css?v=20260714-pricing-contrast-v3">
   <style id="a11y-contrast-fix">
     /* WCAG contrast overrides: giữ nguyên bố cục, chỉ tăng độ tương phản chữ/nền. */
     .section-light,
@@ -86,6 +86,23 @@
 
     .pricing-section .price-card:not(.featured) ul li::before {
       color: #355000;
+    }
+
+    /* Nút trên card giá nền sáng: không dùng chữ xanh neon trên nền trắng. */
+    .pricing-section .price-card:not(.featured) .btn.btn-outline {
+      background: #101820;
+      border-color: #101820;
+      color: #ffffff;
+      -webkit-text-fill-color: #ffffff;
+      text-shadow: none;
+    }
+
+    .pricing-section .price-card:not(.featured) .btn.btn-outline:hover,
+    .pricing-section .price-card:not(.featured) .btn.btn-outline:focus-visible {
+      background: #d7ff00;
+      border-color: #d7ff00;
+      color: #0b0f13;
+      -webkit-text-fill-color: #0b0f13;
     }
 
     /* Card nổi bật nền xanh sáng phải dùng chữ rất tối. */
