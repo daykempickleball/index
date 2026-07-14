@@ -59,9 +59,10 @@ const leadForm = document.getElementById('lead-form');
 const statusBox = leadForm?.querySelector('.form-status');
 const submitButton = leadForm?.querySelector('button[type="submit"]');
 const submitLabel = submitButton?.querySelector('.submit-label');
-const sheetFrame = document.querySelector('.sheet-submit-frame');
+const submissionIdInput = document.getElementById('submission-id');
 let sheetSubmissionPending = false;
 let sheetSubmissionTimer;
+let currentSubmissionId = '';
 
 function setFormStatus(message, type = '') {
   if (!statusBox) return;
@@ -70,18 +71,43 @@ function setFormStatus(message, type = '') {
   if (type) statusBox.classList.add(type);
 }
 
-function finishSheetSubmission() {
+function resetSubmitButton() {
+  if (submitButton) submitButton.disabled = false;
+  if (submitLabel) submitLabel.textContent = 'Gửi đăng ký';
+}
+
+function finishSubmission(ok, message) {
   if (!sheetSubmissionPending) return;
   sheetSubmissionPending = false;
   clearTimeout(sheetSubmissionTimer);
+  resetSubmitButton();
 
-  if (submitButton) submitButton.disabled = false;
-  if (submitLabel) submitLabel.textContent = 'Gửi đăng ký';
-  leadForm?.reset();
-  setFormStatus('Đăng ký thành công! Coach Linh sẽ liên hệ với bạn sớm.', 'success');
+  if (ok) {
+    leadForm?.reset();
+    currentSubmissionId = '';
+    setFormStatus(message || 'Đăng ký thành công! Coach Linh sẽ liên hệ với bạn sớm.', 'success');
+  } else {
+    setFormStatus(message || 'Không thể lưu dữ liệu. Vui lòng thử lại hoặc liên hệ Zalo 0772 334 449.', 'error');
+  }
 }
 
-sheetFrame?.addEventListener('load', finishSheetSubmission);
+// Apps Script trả kết quả từ iframe bằng postMessage.
+// Chỉ chấp nhận phản hồi từ tên miền chính thức của Google Apps Script.
+window.addEventListener('message', (event) => {
+  const allowedOrigins = new Set([
+    'https://script.google.com',
+    'https://script.googleusercontent.com'
+  ]);
+
+  if (!allowedOrigins.has(event.origin)) return;
+
+  const data = event.data;
+  if (!data || data.source !== '5p-pickleball-form') return;
+  if (!sheetSubmissionPending) return;
+  if (!data.submissionId || data.submissionId !== currentSubmissionId) return;
+
+  finishSubmission(Boolean(data.ok), String(data.message || ''));
+});
 
 leadForm?.addEventListener('submit', (event) => {
   const data = new FormData(leadForm);
@@ -101,16 +127,17 @@ leadForm?.addEventListener('submit', (event) => {
     return;
   }
 
+  currentSubmissionId = (crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`);
+  if (submissionIdInput) submissionIdInput.value = currentSubmissionId;
+
   sheetSubmissionPending = true;
   if (submitButton) submitButton.disabled = true;
   if (submitLabel) submitLabel.textContent = 'Đang gửi...';
-  setFormStatus('Đang lưu thông tin vào hệ thống...');
+  setFormStatus('Đang lưu thông tin vào Google Sheets...');
 
+  // Nếu Apps Script bị chặn quyền hoặc chưa triển khai đúng, không báo thành công giả.
   sheetSubmissionTimer = window.setTimeout(() => {
     if (!sheetSubmissionPending) return;
-    sheetSubmissionPending = false;
-    if (submitButton) submitButton.disabled = false;
-    if (submitLabel) submitLabel.textContent = 'Gửi đăng ký';
-    setFormStatus('Chưa thể xác nhận dữ liệu. Vui lòng thử lại hoặc liên hệ Zalo 0772 334 449.', 'error');
+    finishSubmission(false, 'Google Sheets chưa xác nhận dữ liệu. Kiểm tra lại bản triển khai Apps Script hoặc liên hệ Zalo 0772 334 449.');
   }, 20000);
 });
