@@ -43,7 +43,8 @@ document.querySelectorAll('.js-zalo').forEach(el => {
   el.rel = 'noopener noreferrer';
 });
 
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
