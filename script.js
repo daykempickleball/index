@@ -40,6 +40,7 @@ document.querySelectorAll('.js-phone').forEach(el => {
 document.querySelectorAll('.js-zalo').forEach(el => {
   el.href = SITE_CONFIG.zaloUrl;
   el.target = '_blank';
+  el.rel = 'noopener noreferrer';
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();

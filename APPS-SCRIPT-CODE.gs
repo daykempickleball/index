@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = "1HGtvGAMHVEOtNgxZD2oglwal82wJ1gTXnAByHiHaQS0";
 const SHEET_NAME = "Sheet1";
-const WEBSITE_ORIGIN = "https://daykempickleball.github.io";
+const WEBSITE_ORIGIN = "https://daykempickleball.com";
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
