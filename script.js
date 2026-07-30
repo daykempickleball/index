@@ -87,7 +87,9 @@ function finishSubmission(ok, message) {
   if (ok) {
     leadForm?.reset();
     currentSubmissionId = '';
-    setFormStatus(message || 'Đăng ký thành công! Coach Linh sẽ liên hệ với bạn sớm.', 'success');
+    const successMessage = String(message || 'Đăng ký thành công! 5P Team sẽ liên hệ với bạn sớm.')
+      .replace(/Coach\s+Linh/gi, '5P Team');
+    setFormStatus(successMessage, 'success');
   } else {
     setFormStatus(message || 'Không thể lưu dữ liệu. Vui lòng thử lại hoặc liên hệ Zalo 0772 334 449.', 'error');
   }

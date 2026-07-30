@@ -52,7 +52,7 @@ function doPost(e) {
       source: "5p-pickleball-form",
       ok: true,
       submissionId: submissionId,
-      message: "Đăng ký thành công! Coach Linh sẽ liên hệ với bạn sớm."
+      message: "Đăng ký thành công! 5P Team sẽ liên hệ với bạn sớm."
     });
   } catch (error) {
     return htmlResponse({
