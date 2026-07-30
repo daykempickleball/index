@@ -1,0 +1,16 @@
+ĐÃ SỬA 30/07/2026
+
+1. Khôi phục title trang chủ:
+Dạy Kèm Pickleball 1:1 Bao Lên Trình | 5P
+
+2. Khôi phục meta description cũ có từ khóa chính “Dạy kèm Pickleball 1:1”.
+
+3. Đồng bộ OG title/description và Twitter title/description.
+
+4. Tạo favicon PNG 96x96 tại /favicon-96x96.png, giữ favicon.ico và apple-touch-icon làm dự phòng.
+
+5. Đồng bộ favicon trên trang chủ và toàn bộ 4 trang blog.
+
+6. Cập nhật lastmod trang chủ trong sitemap.xml thành 2026-07-30.
+
+Không thay đổi giao diện, nội dung hiển thị, form, CSS hoặc JavaScript.
