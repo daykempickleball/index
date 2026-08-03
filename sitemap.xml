@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://daykempickleball.com/</loc>
@@ -6,18 +6,26 @@
   </url>
   <url>
     <loc>https://daykempickleball.com/blog/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-03</lastmod>
   </url>
   <url>
     <loc>https://daykempickleball.com/blog/hoc-pickleball-1-kem-1-co-hieu-qua-khong.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-03</lastmod>
   </url>
   <url>
     <loc>https://daykempickleball.com/blog/hoc-phi-pickleball-1-kem-1-tphcm.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-03</lastmod>
   </url>
   <url>
     <loc>https://daykempickleball.com/blog/hoc-pickleball-bao-nhieu-buoi-thi-choi-duoc.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://daykempickleball.com/blog/cach-chon-huan-luyen-vien-pickleball-1-kem-1-tphcm.html</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://daykempickleball.com/blog/nguoi-moi-hoc-pickleball-can-chuan-bi-gi.html</loc>
+    <lastmod>2026-08-03</lastmod>
   </url>
 </urlset>
